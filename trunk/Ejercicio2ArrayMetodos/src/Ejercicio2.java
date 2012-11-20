@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Saludos
  * La Real arrasó
@@ -25,16 +27,28 @@ public class Ejercicio2 {
 	 * Mostrar array de benjamin
 	 * @param miArray
 	 */
-	
-	
-		public static void mostrar (int[] miArray)
-		{
-			for(int y =0; y<miArray.length; y++){
-			System.out.println(miArray[y]);
+	public static void mostrar (int[] miArray)
+	{
+		for(int y =0; y<miArray.length; y++){
+		System.out.println(miArray[y]);
 			
-			}
 		}
+	}
+	/**
+	 * inicializarAleatorio
+	 * inicializa con numeros aleatorios el array
+	 * Mikel pardo
+	 * @param miArray
+	 */
+	public static void inicializarAleatorio (int[] miArray)
+	{
+		Random aleatorio = new Random();
 		
+		for(int z=0; z<miArray.length; z++)
+		{
+			miArray[z]=aleatorio.nextInt(11);
+		}
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] números = new int[15];
@@ -51,3 +65,4 @@ public class Ejercicio2 {
 		System.out.println("Rubén va a suspender todas, que pelao");
 	}
 }
+
