@@ -16,6 +16,7 @@ public class Ejercicio2 {
 		// TODO Auto-generated method stub
 		int[] números = new int[15];
 		System.out.println("DEL BARCOOOOOOOO, LEOOOOOOOOOOOOOOOON");
+		System.out.println("Rubén va a suspender todas, que pelao");
 	}
 
 }
