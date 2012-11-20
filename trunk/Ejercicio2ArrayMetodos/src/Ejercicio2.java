@@ -1,5 +1,6 @@
 /**
- * 
+ * Saludos
+ * La Real arrasó
  */
 
 /**
@@ -13,8 +14,8 @@ public class Ejercicio2 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nÃºmeros = new int[15];
-		
+		int[] números = new int[15];
+		System.out.println("Hola");
 	}
 
 }
