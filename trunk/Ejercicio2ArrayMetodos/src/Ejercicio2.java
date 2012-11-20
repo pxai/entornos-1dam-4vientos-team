@@ -21,6 +21,20 @@ public class Ejercicio2 {
 		miArray[x]=numero;
 	}
 	}
+	/**
+	 * Mostrar array de benjamin
+	 * @param miArray
+	 */
+	
+	
+		public static void mostrar (int[] miArray)
+		{
+			for(int y =0; y<miArray.length; y++){
+			System.out.println(miArray[y]);
+			
+			}
+		}
+		
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] números = new int[15];
