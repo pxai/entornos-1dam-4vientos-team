@@ -49,6 +49,20 @@ public class Ejercicio2 {
 			miArray[z]=aleatorio.nextInt(11);
 		}
 	}
+	/**
+	 * aleatorio
+	 * coge de un grupo de numeros random un numero al azar, gracias al return.
+	 * @param miArray
+	 * @return
+	 */
+	
+	public static int aleatorio(int[] miArray){
+	Random aleatorio = new Random();
+	int numero = aleatorio.nextInt(miArray.length) ;
+	return miArray[numero];
+	}
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] números = new int[15];
