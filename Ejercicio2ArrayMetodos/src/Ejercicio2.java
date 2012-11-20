@@ -15,8 +15,16 @@ public class Ejercicio2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] números = new int[15];
-		System.out.println("DEL BARCOOOOOOOO, LEOOOOOOOOOOOOOOOON");
+		String[] palabras = new String[5];
+		palabras[0] = "AMADOR ";
+		palabras[1] = "DEL ";
+		palabras[2] = "BARCOOOOOOOO ";
+		palabras[3] = "PALOMARES ";
+		palabras[4] = ", LEOOOOOOOOOOOOOOOON";
+		
+		for(int x = 0; x < 5; x++){
+			System.out.print(palabras[x]);
+		}
 		System.out.println("Rubén va a suspender todas, que pelao");
 	}
-
 }
