@@ -10,8 +10,17 @@
 public class Ejercicio2 {
 
 	/**
-	 * @param args
+	 * inicializarConNumero
+	 * Inicializa con un numero el array
+	 * Eneko Moreno 
+	 * @param miArray
+	 * @param numero
 	 */
+	public static void inicializarConNumero (int[] miArray, int numero){
+	for(int x = 0; x < miArray.length; x++){
+		miArray[x]=numero;
+	}
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] números = new int[15];
