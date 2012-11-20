@@ -15,7 +15,7 @@ public class Ejercicio2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] números = new int[15];
-		System.out.println("Hola");
+		System.out.println("DEL BARCOOOOOOOO, LEOOOOOOOOOOOOOOOON");
 	}
 
 }
