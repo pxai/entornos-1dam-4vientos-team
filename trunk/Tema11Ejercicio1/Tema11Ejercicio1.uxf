@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>36</x>
+      <y>72</y>
+      <w>243</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Jugador
+--
+-dombre: String
+-puesto: String
+-dorsal: int
+--
++Jugador (nombre: String, puesto: Strin, dorsal: int)
++toString: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>432</x>
+      <y>45</y>
+      <w>189</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>Equipo
+
+
+--
+-id: Long
+-nombre:string
+-anofundacion:int
+-presupuesto:double
+-jugadores: vector  
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>252</x>
+      <y>126</y>
+      <w>197</w>
+      <h>53</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>180;27;27;36</additional_attributes>
+  </element>
+</diagram>
