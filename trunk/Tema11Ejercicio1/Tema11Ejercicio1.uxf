@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="11.5.1">
-  <zoom_level>9</zoom_level>
+  <zoom_level>17</zoom_level>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>36</x>
-      <y>72</y>
-      <w>243</w>
-      <h>171</h>
+      <x>0</x>
+      <y>34</y>
+      <w>459</w>
+      <h>323</h>
     </coordinates>
     <panel_attributes>Jugador
 --
@@ -22,16 +22,15 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>432</x>
-      <y>45</y>
-      <w>189</w>
-      <h>171</h>
+      <x>612</x>
+      <y>0</y>
+      <w>357</w>
+      <h>323</h>
     </coordinates>
     <panel_attributes>Equipo
 
 
 --
--id: Long
 -nombre:string
 -anofundacion:int
 -presupuesto:double
@@ -45,12 +44,34 @@
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>252</x>
-      <y>126</y>
-      <w>197</w>
-      <h>53</h>
+      <x>408</x>
+      <y>153</y>
+      <w>237</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>180;27;27;36</additional_attributes>
+    <additional_attributes>204;51;51;51</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>629</x>
+      <y>629</y>
+      <w>187</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>Principal</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>680</x>
+      <y>272</y>
+      <w>84</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>51;51;51;357</additional_attributes>
   </element>
 </diagram>
