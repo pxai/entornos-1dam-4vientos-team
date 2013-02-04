@@ -35,6 +35,6 @@ public void setCalorias(int calorias) {
  */
 @Override
 public String toString() {
-	return "Caramelo [calorias=" + calorias + "]";
+	return super.toString()+ "Caramelo [calorias=" + calorias + "]";
 }
 }
