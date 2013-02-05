@@ -8,7 +8,7 @@ import java.util.Random;
  * @author raquel_valenzuela
  *
  */
-public class Vehiculo {
+public abstract class Vehiculo {
 	protected String nombre;
 	protected int velocidad;
 	protected int aceleracion;
