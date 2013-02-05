@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="11.5.1">
-  <zoom_level>10</zoom_level>
+  <zoom_level>14</zoom_level>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>50</x>
-      <y>20</y>
-      <w>210</w>
-      <h>190</h>
+      <x>0</x>
+      <y>0</y>
+      <w>294</w>
+      <h>266</h>
     </coordinates>
     <panel_attributes>Vehiculo
 --
@@ -26,10 +26,38 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>70</x>
-      <y>270</y>
-      <w>150</w>
-      <h>90</h>
+      <x>378</x>
+      <y>392</y>
+      <w>210</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Circuito
+--
+
+-nombre: String
+-posiciones: int
+--
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>98</x>
+      <y>224</y>
+      <w>70</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>42;42;42;70;42;168</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>56</x>
+      <y>392</y>
+      <w>210</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>Coche
 --
@@ -40,14 +68,69 @@
     <additional_attributes/>
   </element>
   <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>378</x>
+      <y>98</y>
+      <w>210</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Carrera
+--
+-nombre: String
+-circuito: Circuito
+-participantes: Vector
+--
++meterVehiculo(v:Vehiculo)
++correr(): Vehiculo
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>120</x>
-      <y>180</y>
-      <w>50</w>
-      <h>110</h>
+      <x>252</x>
+      <y>0</y>
+      <w>266</w>
+      <h>126</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;50;30;80;30;90</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>238;98;238;42;42;42</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>434</x>
+      <y>224</y>
+      <w>70</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>42;42;42;168</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>658</x>
+      <y>140</y>
+      <w>210</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Principal
+--
+--
++main()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>546</x>
+      <y>168</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>42;42;112;42</additional_attributes>
   </element>
 </diagram>
