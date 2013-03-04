@@ -1,6 +1,9 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * 
@@ -89,10 +92,12 @@ public class EntradaSalida {
 	public Date leerFecha (String mensaje) {
 		String lineaLeida = "";
 		Date fecha = new Date();
+		SimpleDateFormat formatoDeFecha = new SimpleDateFormat("dd/MM/yyyy");
 		
 		try {
 			System.out.println(mensaje);
 			lineaLeida = lector.readLine(); 
+			fecha = formatoDeFecha.parse(lineaLeida);
 			
 		} catch (Exception e) {
 			System.err.println("Error al leer dato, devuelvo 0");
