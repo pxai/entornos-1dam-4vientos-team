@@ -29,10 +29,18 @@ public class Game {
 		army1 = new Army("Demons",1);
 		army2 = new Army("Undead",2);
 		battlefield = new Battlefield(battleName);
+		
+		for (int i = 1; i<= army1.size();i++) {
+			battlefield.putUnit(army1.get(i-1),9,i);
+			battlefield.putUnit(army2.get(i-1),0,i);
+		}
+		
 		currentArmy = army1;
 		nextArmy = army2;
+		
 	}
 
+	
 	/**
 	 * @return the army1
 	 */
@@ -133,16 +141,48 @@ public class Game {
 		String result = "OK";
 		
 		if (!this.battlefield.isAnybodyThere(attackerX, attackerY, currentArmy.getArmyNumber())) {
-			return "You don't have any unit there.";
+			return "ERROR:You don't have any unit there.";
 		}
 
 		if (!this.battlefield.isAnybodyThere(defenderX, defenderY, nextArmy.getArmyNumber())) {
-			return "There is no enemy unit there.";
+			return "ERROR:There is no enemy unit there.";
 		}
 		
 		if (!this.battlefield.isAttackRangeCorrect(attackerX,attackerY,defenderX,defenderY)) {
-			return "Your attack range does not reach the enemy";
+			return "ERROR:Your attack range does not reach the enemy";
 		}
+
+		return result;
+	}
+	
+	
+	/**
+	 * move
+	 * @param originX
+	 * @param originY
+	 * @param destinyX
+	 * @param destinyY
+	 * @return a message with result
+	 * TODO: change x,y with a Coord class
+	 */
+	public String move (int originX, int originY, int destinyX, int destinyY) {
+		String result = "OK";
+		
+		if (!this.battlefield.isAnybodyThere(originX, originY, currentArmy.getArmyNumber())) {
+			return "ERROR:You don't have any unit there.";
+		}
+
+		if (!this.battlefield.isEmpty(destinyX,destinyY)) {
+			return "ERROR:There is another unit there.";
+		}
+		
+		if (!this.battlefield.isMoveCorrect(originX, originY, destinyX, destinyY)) {
+			return "ERROR:Your move range does not reach destiny";
+		}
+		
+		// Everything is ok, we can move unit
+		this.battlefield.moveUnit(originX, originY, destinyX, destinyY);
+		
 
 		return result;
 	}

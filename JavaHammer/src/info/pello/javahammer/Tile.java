@@ -71,7 +71,7 @@ public class Tile {
 	 */
 	public String show() {
 		if (this.unit == null)
-			return "[ ]";
+			return "[   ]";
 		else
 			return this.unit.show();
 	}

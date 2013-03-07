@@ -10,23 +10,30 @@ import java.util.Random;
  *
  */
 public abstract class Unit {
-	private int armyNumber;
-	private String name;
-	private int number;
-	private int attack;
-	private int defense;
-	private int move;
-	private int range;
-	private int life = 3;
-	private String unitCode;
-	private Random random = new Random();
+	protected int armyNumber;
+	protected String name;
+	protected int number;
+	protected int attack;
+	protected int defense;
+	protected int move;
+	protected int range;
+	protected int life = 3;
+	protected String unitCode;
+	protected Random random = new Random();
 	
 	public Unit (int armyNumber, String name, int number) {
 		this.armyNumber = armyNumber;
 		this.name = name;
 		this.number = number;
 	}
-	
+
+	public Unit (int armyNumber, String name, int number, String unitCode) {
+		this.armyNumber = armyNumber;
+		this.name = name;
+		this.number = number;
+		this.unitCode = unitCode;
+	}
+
 	/**
 	 * show
 	 * shows unit info for the map
@@ -185,6 +192,20 @@ public abstract class Unit {
 
 	public void setRange(int range) {
 		this.range = range;
+	}
+
+	/**
+	 * @return the unitCode
+	 */
+	public String getUnitCode() {
+		return unitCode;
+	}
+
+	/**
+	 * @param unitCode the unitCode to set
+	 */
+	public void setUnitCode(String unitCode) {
+		this.unitCode = unitCode;
 	}
 
 }

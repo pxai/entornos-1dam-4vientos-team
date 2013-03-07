@@ -12,6 +12,7 @@ public class JavaHammer {
 		InputOutput es = new InputOutput();
 		Game game = new Game("Battle of Death");
 		int test = es.readIntBounds("Gimme a number",0,10);
+		int option = 0;
 		/*
 		es.msg("you entered " + test);
 		es.msg("Current army: " + game.getCurrentArmy().getName());
@@ -21,7 +22,7 @@ public class JavaHammer {
 		*/
 		es.msg(game.getBattlefield().show());
 		do {
-
+			option =  es.menu(game.giveOptions(),"Please choose:");
 			
 			game.turn();
 		} while(game.notGameOver());

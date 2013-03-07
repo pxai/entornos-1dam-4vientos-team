@@ -4,6 +4,7 @@ package info.pello.javahammer;
  * Battlefield
  * Contains the battlefield of war
  * @author Pello Altadill
+ * @greets: Carlos Rota, for the rangeCheck algorythm
  * TODO: variable MAP_SIZE
  */
 public class Battlefield {
@@ -27,8 +28,8 @@ public class Battlefield {
 	 * inits the battlefield
 	 */
 	private void initialize () {
-		for (int i=0; i< 10; i++)
-			for (int j=0; j< 10; j++)
+		for (int i=0; i< MAP_SIZE; i++)
+			for (int j=0; j< MAP_SIZE; j++)
 				map[i][j] = new Tile("War tile");
 	}
 	
@@ -39,10 +40,16 @@ public class Battlefield {
 	 * @return a String containing a map view
 	 */
 	public String show () {
-		String mapString = "";
-
-		for (int i=0; i< 10; i++) {
-			for (int j=0; j< 10; j++) {
+		String mapString = " ";
+		for (int i=0; i< MAP_SIZE; i++) {
+			mapString += " " + i + " ";
+		}
+		
+		mapString += "\n";
+		
+		for (int i=0; i< MAP_SIZE; i++) {
+				mapString += i;
+			for (int j=0; j< MAP_SIZE; j++) {
 				mapString += map[i][j].show();
 			}
 			mapString += "\n";
@@ -86,7 +93,7 @@ public class Battlefield {
 	 * @return
 	 */
 	public boolean isMoveCorrect(int originX, int originY,
-			int destinyX, int destinyY, int armyNumber) {
+			int destinyX, int destinyY) {
 		// TODO Auto-generated method stub
 		int moveRange = map[originX][originY].getUnit().getMove();
 
@@ -124,6 +131,36 @@ public class Battlefield {
 	private boolean isRangeCorrect(int originX, int originY, int destinyX,
 			int destinyY, int moveRange) {
 		return (Math.abs(destinyX-originX) <= moveRange && Math.abs(destinyY-originY) <= moveRange);
+	}
+
+	/**
+	 * isEmpty
+	 * tell us if a tile of the battlefield is empty
+	 * @param destinyX
+	 * @param destinyY
+	 * @return
+	 */
+	public boolean isEmpty(int destinyX, int destinyY) {
+		// TODO Auto-generated method stub
+		return map[destinyX][destinyY].isEmpty();
+	}
+	
+	/**
+	 * moveUnit
+	 * moves one unit from one place to another
+	 * @param originX
+	 * @param originY
+	 * @param destinyX
+	 * @param destinyY
+	 */
+	public void moveUnit(int originX, int originY, int destinyX, int destinyY) {
+		map[destinyX][destinyY].setUnit(map[originX][originY].getUnit());
+		map[originX][originY].remove();
+	}
+
+	public void putUnit(Unit unit, int i, int j) {
+		// TODO Auto-generated method stub
+		map[i][j].setUnit(unit);
 	}
 
 }
