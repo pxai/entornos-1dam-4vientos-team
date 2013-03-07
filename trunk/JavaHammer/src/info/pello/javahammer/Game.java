@@ -1,5 +1,7 @@
 package info.pello.javahammer;
 
+import java.util.Vector;
+
 /**
  * Game
  * All the game world & logic goes here
@@ -11,6 +13,8 @@ public class Game {
 	private Army army2;
 	private Battlefield battlefield;
 	private String battleName;
+	private Army currentArmy;
+	private Army nextArmy;
 	
 	public Game (String battleName) {
 		this.battleName = battleName;
@@ -21,6 +25,8 @@ public class Game {
 		army1 = new Army("Demons",1);
 		army2 = new Army("Undead",2);
 		battlefield = new Battlefield(battleName);
+		currentArmy = army1;
+		nextArmy = army2;
 	}
 
 	/**
@@ -49,5 +55,48 @@ public class Game {
 	 */
 	public String getBattleName() {
 		return battleName;
+	}
+	
+	/**
+	 * getCurrentArmy
+	 * @return the name of the army
+	 */
+	public Army getCurrentArmy () {
+		return currentArmy;
+	}
+	
+	/**
+	 * getNextArmy
+	 * @return the name of the army
+	 */
+	public Army getNextArmy () {
+		return nextArmy;
+	}
+	
+	/**
+	 * turn
+	 * new turn.
+	 */
+	public void turn () {
+		Army tmpArmy;
+		tmpArmy = currentArmy;
+		currentArmy = nextArmy;
+		nextArmy = tmpArmy;
+	}
+	
+	/**
+	 * notGameOver
+	 * @return true if game is not over
+	 */
+	public boolean notGameOver () {
+		return army1.isAlive() && army2.isAlive();
+	}
+	
+	/**
+	 * getArmyStatus
+	 * returns army status
+	 */
+	public Vector<String> getArmyStatus () {
+		return currentArmy.getStatus();
 	}
 }

@@ -13,7 +13,7 @@ import java.util.Vector;
 
 /**
  * Class to deal with console I/O
- * @author pello_altadill, Benjamín, Guerrero
+ * @author pello_altadill, Benjamín Miller, Pablo Guerrero
  *
  */
 public class InputOutput {
@@ -22,7 +22,7 @@ public class InputOutput {
 	
 	/**
 	 * InputOutput
-	 * Constructor por defecto
+	 * default constructor
 	 */
 	public InputOutput () {
 		
@@ -133,7 +133,7 @@ public class InputOutput {
 	}
 	
 	/**
-	 * leerFecha
+	 * readDate
 	 * @param mensaje
 	 * @return Date
 	 */
@@ -154,6 +154,21 @@ public class InputOutput {
 		return fecha;
 	}
 	
+<<<<<<< .mine
+	/**
+	 * showList
+	 * @param list
+	 * @return
+	 */
+	public String showList (Vector<String> list) {
+		String result = "";
+		for (int i = 0;i<list.size();i++)
+			result += list.get(i) + "\n";
+		
+		return result;
+	}
+	
+=======
 	/**
 	 * menu
 	 * shows a menu for users
@@ -174,5 +189,6 @@ public class InputOutput {
 		return option;
 		
 	}
+>>>>>>> .r38
 
 }

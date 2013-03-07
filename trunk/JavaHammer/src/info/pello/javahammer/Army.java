@@ -71,6 +71,35 @@ public class Army extends Vector<Unit>{
 	public Commander getCommander() {
 		return commander;
 	}
+
+	/**
+	 * isAlive
+	 * army is alive if any unit is still alive
+	 * @return whether army is alive or not.
+	 */
+	public boolean isAlive() {
+		
+		for (int i=0;i<this.size();i++) 
+			if (this.get(i).imAlive()) 
+				return true;
+		
+		return false;
+	}
+	
+	/**
+	 * getStatus
+	 * shows the list of all units
+	 * @return
+	 */
+	public Vector<String> getStatus () {
+		Vector<String> status = new Vector<String>();
+		
+		for (int i=0;i<this.size();i++) {
+			status.add(this.get(i).status());
+		}
+		
+		return status;
+	}
 	
 
 }

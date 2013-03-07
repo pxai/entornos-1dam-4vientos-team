@@ -1,5 +1,7 @@
 package info.pello.javahammer;
 
+import java.util.Random;
+
 /**
  * Unit
  * Represents one unit of the army
@@ -17,6 +19,7 @@ public abstract class Unit {
 	private int range;
 	private int life = 3;
 	private String unitCode;
+	private Random random = new Random();
 	
 	public Unit (int armyNumber, String name, int number) {
 		this.armyNumber = armyNumber;
@@ -140,4 +143,40 @@ public abstract class Unit {
 		statusResult += "Mov: " + move +" Rng:" + range;
 		return statusResult;
 	}
+	
+	
+	/**
+	 * decreaseLife
+	 * decrements a life point
+	 */
+	public void decreaseLife () {
+		if (life >0)
+			life--;
+	}
+	
+	/**
+	 * imAlive
+	 * 
+	 * @return true if unit is still alive
+	 */
+	public boolean imAlive () {
+		return (life > 0);
+	}
+	
+	/**
+	 * attack
+	 * @return total attack points
+	 */
+	public int attack() {
+		return attack + random.nextInt(3 + life);
+	}
+
+	/**
+	 * defend
+	 * @return total defense points
+	 */
+	public int defend() {
+		return attack + random.nextInt(3 + life);
+	}
+
 }
