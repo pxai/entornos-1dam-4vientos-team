@@ -73,7 +73,7 @@ public class Tile {
 		if (this.unit == null)
 			return "[   ]";
 		else
-			return this.unit.show();
+			return "["+this.unit.show()+"]";
 	}
 	
 }
