@@ -179,4 +179,12 @@ public abstract class Unit {
 		return attack + random.nextInt(3 + life);
 	}
 
+	public int getRange() {
+		return range;
+	}
+
+	public void setRange(int range) {
+		this.range = range;
+	}
+
 }

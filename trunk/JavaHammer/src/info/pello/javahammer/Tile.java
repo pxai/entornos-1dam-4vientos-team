@@ -35,6 +35,15 @@ public class Tile {
 	}
 
 	/**
+	 * isEmpty
+	 * tells if tile is empty or not
+	 * @return is a unit around...
+	 */
+	public boolean isEmpty() {
+		return (unit==null);
+	}
+	
+	/**
 	 * @return the unit
 	 */
 	public Unit getUnit() {
