@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Vector;
 
 
 
@@ -153,5 +154,25 @@ public class InputOutput {
 		return fecha;
 	}
 	
+	/**
+	 * menu
+	 * shows a menu for users
+	 * @param options
+	 * @param menuMsg
+	 * @return
+	 */
+	public int menu(Vector<String> options, String menuMsg) {
+		int option = 0;
+		msg(menuMsg);
+		
+		for (int i = 0;i< options.size();i++) {
+			msg((i+1) +". "+options.get(i));
+		}
+		
+		option = readIntBounds("Option: ",1,options.size());
+		
+		return option;
+		
+	}
 
 }
