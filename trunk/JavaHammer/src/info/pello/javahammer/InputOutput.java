@@ -154,7 +154,7 @@ public class InputOutput {
 		return fecha;
 	}
 	
-<<<<<<< .mine
+
 	/**
 	 * showList
 	 * @param list
@@ -168,7 +168,7 @@ public class InputOutput {
 		return result;
 	}
 	
-=======
+
 	/**
 	 * menu
 	 * shows a menu for users
@@ -189,6 +189,6 @@ public class InputOutput {
 		return option;
 		
 	}
->>>>>>> .r38
+
 
 }

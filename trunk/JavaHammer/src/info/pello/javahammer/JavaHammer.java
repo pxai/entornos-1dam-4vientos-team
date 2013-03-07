@@ -26,6 +26,11 @@ public class JavaHammer {
 		/*
 		int test = es.readIntBounds("Gimme a number",0,10);
 		es.msg("you entered " + test);
+<<<<<<< .mine
+		
+
+=======
 		*/
+
 	}
 }
