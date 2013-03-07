@@ -12,7 +12,20 @@ public class JavaHammer {
 		InputOutput es = new InputOutput();
 		Game game = new Game("Battle of Death");
 		es.msg(game.getBattlefield().show());
+		do {
+			int test = es.readIntBounds("Gimme a number",0,10);
+			es.msg("you entered " + test);
+			es.msg("Current army: " + game.getCurrentArmy().getName());
+			es.msg(es.showList(game.getCurrentArmy().getStatus()));
+			game.turn();
+			es.msg("Current army: " + game.getCurrentArmy().getName());
+			
+			
+		} while(game.notGameOver());
+		es.msg("Thnx for playing JavaHammer");
+		/*
 		int test = es.readIntBounds("Gimme a number",0,10);
 		es.msg("you entered " + test);
+		*/
 	}
 }
