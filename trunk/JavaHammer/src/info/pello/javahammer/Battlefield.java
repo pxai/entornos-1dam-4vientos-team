@@ -9,7 +9,7 @@ package info.pello.javahammer;
  */
 public class Battlefield {
 	private String battleName;
-	private final static int MAP_SIZE = 10;
+	public final static int MAP_SIZE = 10;
 	
 	private Tile[][] map = new Tile[MAP_SIZE][MAP_SIZE];
 	
@@ -67,8 +67,8 @@ public class Battlefield {
 	public boolean isAnybodyThere (int x, int y, int army) {
 		
 		return  (withinBounds(x,y) 
-					&& map[x][y].isEmpty()  
-						&& map[x][y].getUnit().getArmyNumber()== army);
+					&& !map[x][y].isEmpty()
+						&& map[x][y].getUnit().getArmyNumber() == army);
 	}
 	
 	/**

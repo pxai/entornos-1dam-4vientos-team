@@ -15,7 +15,7 @@ public abstract class Unit {
 	protected int number;
 	protected int attack;
 	protected int defense;
-	protected int move;
+	protected int move = 1;
 	protected int range;
 	protected int life = 3;
 	protected String unitCode;
