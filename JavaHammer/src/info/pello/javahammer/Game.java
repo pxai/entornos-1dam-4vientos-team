@@ -15,6 +15,7 @@ public class Game {
 	private String battleName;
 	private Army currentArmy;
 	private Army nextArmy;
+	private Vector<String> options;
 	
 	public Game (String battleName) {
 		this.battleName = battleName;
@@ -37,6 +38,14 @@ public class Game {
 		
 		currentArmy = army1;
 		nextArmy = army2;
+		
+		options = new Vector<String>();
+		
+		options.add("Move");
+		options.add("Attack");
+		options.add("Show Map");
+		options.add("Show army status");
+		options.add("Pass");
 		
 	}
 
@@ -106,6 +115,14 @@ public class Game {
 	}
 	
 	/**
+	 * showBattlefield
+	 * returns battlefield map
+	 */
+	public String showBattlefield () {
+		return battlefield.show();
+	}
+	
+	/**
 	 * getArmyStatus
 	 * returns army status
 	 */
@@ -118,12 +135,6 @@ public class Game {
 	 * @return Vector with a menú of options for user
 	 */
 	public Vector<String> giveOptions () {
-		Vector<String> options = new Vector<String>();
-		
-		options.add("Move");
-		options.add("Attack");
-		options.add("Pass");
-
 		return options;
 	}
 	
