@@ -138,6 +138,7 @@ public class Game {
 		return options;
 	}
 	
+	
 	/**
 	 * attack
 	 * 
