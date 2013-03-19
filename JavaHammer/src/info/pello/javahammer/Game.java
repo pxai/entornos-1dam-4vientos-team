@@ -42,10 +42,10 @@ public class Game {
 		options = new Vector<GameMenuOption>();
 		
 		options.add(new GameMenuOption(1,"Move",true));
-		options.add(new GameMenuOption(1,"Attack",true));
-		options.add(new GameMenuOption(1,"Show Map",false));
-		options.add(new GameMenuOption(1,"Show army status",false));
-		options.add(new GameMenuOption(1,"Pass",false));
+		options.add(new GameMenuOption(2,"Attack",true));
+		options.add(new GameMenuOption(3,"Show Map",false));
+		options.add(new GameMenuOption(4,"Show army status",false));
+		options.add(new GameMenuOption(5,"Pass",false));
 		
 	}
 

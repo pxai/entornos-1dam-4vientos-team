@@ -24,7 +24,7 @@ public class JavaHammer {
 			resultCode = "";
 			commandResult = "OK:";
 			es.msg( game.getCurrentArmy().getName() + "'s turn ");
-			//option =  es.menu(game.giveOptions(),"Please choose:");
+			option =  es.menu(game.giveOptions(),"Please choose:");
 			switch (option) {
 			case 1:
 					x = es.readIntBounds("Choose origin row.", 0,game.getBattlefield().MAP_SIZE-1);
@@ -33,6 +33,8 @@ public class JavaHammer {
 					desY = es.readIntBounds("Choose destiny column.", 0,game.getBattlefield().MAP_SIZE-1);
 					commandResult = game.move(x,y,desX,desY);
 					es.msg(commandResult);
+					if (commandResult.equals("OK"))
+						es.removeMenuOption(game.giveOptions(), option);
 					break;
 			case 2:
 					x = es.readIntBounds("Choose origin row.", 0,game.getBattlefield().MAP_SIZE-1);
@@ -41,6 +43,8 @@ public class JavaHammer {
 					desY = es.readIntBounds("Choose destiny column.", 0,game.getBattlefield().MAP_SIZE-1);
 					commandResult = game.attack(x,y,desX,desY);
 					es.msg(commandResult);
+					if (commandResult.equals("OK"))
+						es.removeMenuOption(game.giveOptions(), option);
 					break;
 			case 3: es.msg(game.showBattlefield());
 					break;
