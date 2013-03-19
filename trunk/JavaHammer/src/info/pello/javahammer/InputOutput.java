@@ -89,6 +89,41 @@ public class InputOutput {
 	}
 	
 	/**
+	 * readMenuBounds
+	 * reads an integer within menu optionsw
+	 * @param msg to show
+	 * @param
+	 * @return readed value
+	 */
+	public int readMenuBounds (String msg, Vector<GameMenuOption> options) {
+		int result = 0;
+		boolean noCorrectData = true;
+		String readedLine = "";
+		int i = 0;
+		do {
+			try {
+				System.out.println(msg);
+				readedLine = lector.readLine(); 
+				result = Integer.parseInt(readedLine);
+				for (i =0;i< options.size();i++) {
+					if (options.get(i).getNumber() == result) {
+						noCorrectData = false;
+						break;
+					}
+				}
+				//if (result >= min && result <= max) { noCorrectData = false; }
+				if (i == options.size()) { System.out.println("Option not allowed ");}
+			} catch (Exception e) {
+				System.err.println("Incorrect number format");
+				noCorrectData = true;
+			}
+			
+		} while(noCorrectData);
+		
+		return result;
+	}
+	
+	/**
 	 * readDecimal 
 	 * @param msg to show
 	 * @return readed value
@@ -184,7 +219,7 @@ public class InputOutput {
 			msg(options.get(i).getNumber() +". "+options.get(i).getName());
 		}
 		
-		option = readIntBounds("Option: ",1,options.size());
+		option = readMenuBounds("Option: ",options);
 		
 		return option;
 		
