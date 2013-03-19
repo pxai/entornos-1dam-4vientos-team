@@ -176,18 +176,29 @@ public class InputOutput {
 	 * @param menuMsg
 	 * @return
 	 */
-	public int menu(Vector<String> options, String menuMsg) {
+	public int menu(Vector<GameMenuOption> options, String menuMsg) {
 		int option = 0;
 		msg(menuMsg);
 		
 		for (int i = 0;i< options.size();i++) {
-			msg((i+1) +". "+options.get(i));
+			msg(options.get(i).getNumber() +". "+options.get(i).getName());
 		}
 		
 		option = readIntBounds("Option: ",1,options.size());
 		
 		return option;
 		
+	}
+	
+	/**
+	 * marks one of the menu options as used
+	 * @param options
+	 * @param number
+	 */
+	public void removeMenuOption (Vector<GameMenuOption> options, int number) {
+		if (options.get(number).isJustOnce()) {
+			options.remove(number);
+		}
 	}
 
 
