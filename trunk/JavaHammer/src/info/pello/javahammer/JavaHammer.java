@@ -24,7 +24,7 @@ public class JavaHammer {
 			resultCode = "";
 			commandResult = "OK:";
 			es.msg( game.getCurrentArmy().getName() + "'s turn ");
-			option =  es.menu(game.giveOptions(),"Please choose:");
+			//option =  es.menu(game.giveOptions(),"Please choose:");
 			switch (option) {
 			case 1:
 					x = es.readIntBounds("Choose origin row.", 0,game.getBattlefield().MAP_SIZE-1);
