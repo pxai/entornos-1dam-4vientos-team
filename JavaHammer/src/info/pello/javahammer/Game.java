@@ -15,7 +15,7 @@ public class Game {
 	private String battleName;
 	private Army currentArmy;
 	private Army nextArmy;
-	private Vector<String> options;
+	private Vector<GameMenuOption> options;
 	
 	public Game (String battleName) {
 		this.battleName = battleName;
@@ -39,13 +39,13 @@ public class Game {
 		currentArmy = army1;
 		nextArmy = army2;
 		
-		options = new Vector<String>();
+		options = new Vector<GameMenuOption>();
 		
-		options.add("Move");
-		options.add("Attack");
-		options.add("Show Map");
-		options.add("Show army status");
-		options.add("Pass");
+		options.add(new GameMenuOption(1,"Move",true));
+		options.add(new GameMenuOption(1,"Attack",true));
+		options.add(new GameMenuOption(1,"Show Map",false));
+		options.add(new GameMenuOption(1,"Show army status",false));
+		options.add(new GameMenuOption(1,"Pass",false));
 		
 	}
 
@@ -134,7 +134,7 @@ public class Game {
 	 * giveOptions
 	 * @return Vector with a menú of options for user
 	 */
-	public Vector<String> giveOptions () {
+	public Vector<GameMenuOption> giveOptions () {
 		return options;
 	}
 	
