@@ -33,8 +33,6 @@ public class JavaHammer {
 					desY = es.readIntBounds("Choose destiny column.", 0,game.getBattlefield().MAP_SIZE-1);
 					commandResult = game.move(x,y,desX,desY);
 					es.msg(commandResult);
-					if (commandResult.equals("OK"))
-						es.removeMenuOption(game.giveOptions(), option);
 					break;
 			case 2:
 					x = es.readIntBounds("Choose origin row.", 0,game.getBattlefield().MAP_SIZE-1);
@@ -43,8 +41,6 @@ public class JavaHammer {
 					desY = es.readIntBounds("Choose destiny column.", 0,game.getBattlefield().MAP_SIZE-1);
 					commandResult = game.attack(x,y,desX,desY);
 					es.msg(commandResult);
-					if (commandResult.equals("OK"))
-						es.removeMenuOption(game.giveOptions(), option);
 					break;
 			case 3: es.msg(game.showBattlefield());
 					break;
@@ -59,7 +55,7 @@ public class JavaHammer {
 			}
 			es.msg("Command result: " + commandResult.split(":")[0]);
 			if ( commandResult.split(":")[0].equals("OK")) {
-				if (option == 1 || option == 2) { game.giveOptions().remove(option-1);}
+				es.removeMenuOption(game.giveOptions(), option);
 			} else {
 				es.msg("Command failed, try again.");
 			}
