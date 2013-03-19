@@ -231,8 +231,11 @@ public class InputOutput {
 	 * @param number
 	 */
 	public void removeMenuOption (Vector<GameMenuOption> options, int number) {
-		if (options.get(number).isJustOnce()) {
-			options.remove(number);
+		for (int i =0;i< options.size();i++) {
+			if (options.get(i).getNumber() == number && options.get(i).isJustOnce()) {
+				options.remove(i);
+				return;
+			}
 		}
 	}
 
