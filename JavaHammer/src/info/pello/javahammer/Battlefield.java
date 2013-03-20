@@ -158,9 +158,41 @@ public class Battlefield {
 		map[originX][originY].remove();
 	}
 
+	/**
+	 * gets unit from given coords
+	 * @param i
+	 * @param j
+	 * @return
+	 */
+	public Unit getUnit(int i, int j) {
+		// TODO Auto-generated method stub
+		return map[i][j].getUnit();
+	}
+
+	/**
+	 * move unit to given coords
+	 * @param unit
+	 * @param i
+	 * @param j
+	 */
 	public void putUnit(Unit unit, int i, int j) {
 		// TODO Auto-generated method stub
 		map[i][j].setUnit(unit);
+	}
+	
+	/**
+	 * 
+	 * @param attacker
+	 * @param defender
+	 * @return damage done or not
+	 */
+	public boolean attack (Unit attacker, Unit defender) {
+		if (defender.defend() - attacker.attack() <= 0 ) {
+			defender.decreaseLife();
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }
