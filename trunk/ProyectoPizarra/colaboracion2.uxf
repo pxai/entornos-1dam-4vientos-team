@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.4">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>230</x>
+      <y>100</y>
+      <w>250</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1. sacarAleatorio(): String</panel_attributes>
+    <additional_attributes>230;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>160</x>
+      <y>130</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>_:Principal_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>0</x>
+      <y>100</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+sacarAleatorio()</panel_attributes>
+    <additional_attributes>160;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>460</x>
+      <y>240</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>_:Alumno_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>410</x>
+      <y>140</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2. getNombre(): String
+3. incrementarVeces()</panel_attributes>
+    <additional_attributes>110;100;110;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>460</x>
+      <y>120</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>_:GrupoAlumnos_</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

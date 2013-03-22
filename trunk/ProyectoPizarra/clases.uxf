@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.4">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>150</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..n
+
+</panel_attributes>
+    <additional_attributes>30;30;130;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>150</x>
+      <y>0</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Hashtable&lt;String, Alumno&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>160</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>
+Principal
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>150</x>
+      <y>110</y>
+      <w>250</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>GrupoAlumnos
+--
+insertarAlumno(alumno: Alumno)
+eliminarAlumno(expediente: String)
+mostrarAlumnos() : String
+mostrarMedia(): int
+sacarAleatorio(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>220</x>
+      <y>40</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>70</x>
+      <y>150</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>80;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>500</x>
+      <y>150</y>
+      <w>170</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Alumno
+--
+-expediente: String
+-nombre: String
+-veces: int
+--
++incrementarVeces()
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
