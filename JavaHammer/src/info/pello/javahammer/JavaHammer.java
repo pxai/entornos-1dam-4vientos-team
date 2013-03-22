@@ -2,7 +2,7 @@ package info.pello.javahammer;
 
 /**
  * JavaHammer
- * Main Class of JavaHammer Project
+ * Main Class of JavaHammer project
  * @author Pello Altadill
  *
  */
