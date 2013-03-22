@@ -2,7 +2,7 @@ package info.pello.javahammer;
 
 /**
  * JavaHammer
- * Main Class
+ * Main Class of JavaHammer Project
  * @author Pello Altadill
  *
  */
@@ -12,6 +12,7 @@ public class JavaHammer {
 		InputOutput es = new InputOutput();
 		Game game = new Game("Battle of Death");
 		int x, y, desX, desY;
+		int i = 0;
 		String commandResult = "";
 		String resultCode = "";
 		int option = 0;
