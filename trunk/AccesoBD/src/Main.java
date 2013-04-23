@@ -26,6 +26,21 @@ public class Main {
 	      System.out.println("id = " + resultset.getString("id"));
 	      System.out.println("name = " + resultset.getString("name"));
 	    }
+	    
+	  // INSERT
+	  String insertQuery = 
+			  "insert into customer (name,address) values('Sauron','Mordor')";
+	  int result = stat.executeUpdate(insertQuery);
+	  
+	  // DELETE
+	  String deleteQuery = "delete from customer where name='Melkor'";
+	  result = stat.executeUpdate(deleteQuery);
+
+	  // UPDATE
+	  String updateQuery = 
+			  "update customer set address='The Shire' where name='Sauron'";
+	  result = stat.executeUpdate(updateQuery);
+	  
 	    resultset.close();
 	    conn.close();
 	} catch (Exception e) {
