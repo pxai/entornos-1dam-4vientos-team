@@ -1,3 +1,4 @@
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -33,14 +34,29 @@ public class Main {
 	  int result = stat.executeUpdate(insertQuery);
 	  
 	  // DELETE
-	  String deleteQuery = "delete from customer where name='Melkor'";
+	  int id = 4;
+	  String deleteQuery = "delete from customer where id=" + id;
 	  result = stat.executeUpdate(deleteQuery);
 
 	  // UPDATE
+	  String who = "Saruman";
 	  String updateQuery = 
-			  "update customer set address='The Shire' where name='Sauron'";
+	"update customer set address='The Shire' where name='"+who+"'";
 	  result = stat.executeUpdate(updateQuery);
-	  
+	  // PREPARED STATEMENT
+	  String insertSQL = 
+			"insert into customer (name,address) values (?, ?)";
+	  PreparedStatement prep = conn.prepareStatement(insertSQL);
+
+	    prep.setString(1, "Eomer");
+	    prep.setString(2, "Rohan");
+	    prep.addBatch();
+
+	    prep.setString(1, "Sam");
+	    prep.setString(2, "The Shire");
+	    prep.addBatch();
+
+	    prep.executeBatch();
 	    resultset.close();
 	    conn.close();
 	} catch (Exception e) {
