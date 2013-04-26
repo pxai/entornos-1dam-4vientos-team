@@ -1,3 +1,4 @@
 Esto es un readme
+cómo mola
 
-U qué?
+John lisp ha metido cambios.
