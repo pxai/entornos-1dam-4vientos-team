@@ -4,7 +4,7 @@ package info.pello.javahammer;
  * Battlefield
  * Contains the battlefield of war
  * @author Pello Altadill
- * @greets: Carlos Rota, for the rangeCheck algorythm
+ * @thnx: Carlos Rota, for the rangeCheck algorythm
  * TODO: variable MAP_SIZE
  */
 public class Battlefield {
@@ -42,7 +42,7 @@ public class Battlefield {
 	public String show () {
 		String mapString = " ";
 		for (int i=0; i< MAP_SIZE; i++) {
-			mapString += " " + i + " ";
+			mapString += "  " + i + "  ";
 		}
 		
 		mapString += "\n";
@@ -53,6 +53,10 @@ public class Battlefield {
 				mapString += map[i][j].show();
 			}
 			mapString += "\n";
+		}
+		mapString += " ";
+		for (int i=0; i< MAP_SIZE; i++) {
+			mapString += "  " + i + "  ";
 		}
 		return mapString;
 	} 
@@ -68,7 +72,8 @@ public class Battlefield {
 		
 		return  (withinBounds(x,y) 
 					&& !map[x][y].isEmpty()
-						&& map[x][y].getUnit().getArmyNumber() == army);
+						&& map[x][y].getUnit().imAlive()
+							&& map[x][y].getUnit().getArmyNumber() == army);
 	}
 	
 	/**
@@ -79,6 +84,17 @@ public class Battlefield {
 	 */
 	public boolean withinBounds (int x, int y) {
 		return (x >= 0 && x < MAP_SIZE && y >= 0 && y < MAP_SIZE);
+		
+	}
+	
+	/**
+	 * getUnit from a given position
+	 * @param x
+	 * @param y
+	 * @return Unit
+	 */
+	public Unit getUnit (int x, int y) {
+		return map[x][y].getUnit();
 		
 	}
 	
@@ -158,41 +174,9 @@ public class Battlefield {
 		map[originX][originY].remove();
 	}
 
-	/**
-	 * gets unit from given coords
-	 * @param i
-	 * @param j
-	 * @return
-	 */
-	public Unit getUnit(int i, int j) {
-		// TODO Auto-generated method stub
-		return map[i][j].getUnit();
-	}
-
-	/**
-	 * move unit to given coords
-	 * @param unit
-	 * @param i
-	 * @param j
-	 */
 	public void putUnit(Unit unit, int i, int j) {
 		// TODO Auto-generated method stub
 		map[i][j].setUnit(unit);
-	}
-	
-	/**
-	 * 
-	 * @param attacker
-	 * @param defender
-	 * @return damage done or not
-	 */
-	public boolean attack (Unit attacker, Unit defender) {
-		if (defender.defend() - attacker.attack() <= 0 ) {
-			defender.decreaseLife();
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 }

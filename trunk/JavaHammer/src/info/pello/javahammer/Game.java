@@ -41,12 +41,20 @@ public class Game {
 		
 		options = new Vector<GameMenuOption>();
 		
-		options.add(new GameMenuOption(1,"Move",true));
-		options.add(new GameMenuOption(2,"Attack",true));
-		options.add(new GameMenuOption(3,"Show Map",false));
-		options.add(new GameMenuOption(4,"Show army status",false));
-		options.add(new GameMenuOption(5,"Pass",false));
+		initMenu();
 		
+	}
+
+	/**
+	 * inits turn menu
+	 */
+	private void initMenu() {
+		options.removeAllElements();
+		options.add(new GameMenuOption("m","Move",true));
+		options.add(new GameMenuOption("a","Attack",true));
+		options.add(new GameMenuOption("s","Show Map",false));
+		options.add(new GameMenuOption("t","Show Army Status",false));
+		options.add(new GameMenuOption("p","Pass",false));
 	}
 
 	
@@ -104,6 +112,7 @@ public class Game {
 		tmpArmy = currentArmy;
 		currentArmy = nextArmy;
 		nextArmy = tmpArmy;
+		initMenu();
 	}
 	
 	/**
@@ -138,6 +147,17 @@ public class Game {
 		return options;
 	}
 	
+	/**
+	 * removes Option from menu
+	 * @param
+	 */
+	public void removeOption (String code) {
+        for (int i = 0;i< options.size();i++) {
+            if (options.get(i).getCode().equals(code) ) {
+            	options.remove(i);
+            } 
+        }
+	}
 	
 	/**
 	 * attack
@@ -152,18 +172,22 @@ public class Game {
 	public String attack (int attackerX, int attackerY, int defenderX, int defenderY) {
 		String result = "OK";
 		
-		if (!this.battlefield.isAnybodyThere(attackerX, attackerY, currentArmy.getArmyNumber())) {
+		if (!battlefield.isAnybodyThere(attackerX, attackerY, currentArmy.getArmyNumber())) {
 			return "ERROR:You don't have any unit there.";
 		}
 
-		if (!this.battlefield.isAnybodyThere(defenderX, defenderY, nextArmy.getArmyNumber())) {
+		if (!battlefield.isAnybodyThere(defenderX, defenderY, nextArmy.getArmyNumber())) {
 			return "ERROR:There is no enemy unit there.";
 		}
 		
-		if (!this.battlefield.isAttackRangeCorrect(attackerX,attackerY,defenderX,defenderY)) {
+		if (!battlefield.isAttackRangeCorrect(attackerX,attackerY,defenderX,defenderY)) {
 			return "ERROR:Your attack range does not reach the enemy";
 		}
 
+		Combat combat = new Combat(this.battlefield.getUnit(attackerX,attackerY),this.battlefield.getUnit(defenderX,defenderY));
+		result += ":" + combat.resolveCombat();
+		
+		
 		return result;
 	}
 	
@@ -180,20 +204,20 @@ public class Game {
 	public String move (int originX, int originY, int destinyX, int destinyY) {
 		String result = "OK";
 		
-		if (!this.battlefield.isAnybodyThere(originX, originY, currentArmy.getArmyNumber())) {
+		if (!battlefield.isAnybodyThere(originX, originY, currentArmy.getArmyNumber())) {
 			return "ERROR:You don't have any unit there.";
 		}
 
-		if (!this.battlefield.isEmpty(destinyX,destinyY)) {
+		if (!battlefield.isEmpty(destinyX,destinyY)) {
 			return "ERROR:There is another unit there.";
 		}
 		
-		if (!this.battlefield.isMoveCorrect(originX, originY, destinyX, destinyY)) {
+		if (!battlefield.isMoveCorrect(originX, originY, destinyX, destinyY)) {
 			return "ERROR:Your move range does not reach destiny";
 		}
 		
 		// Everything is ok, we can move unit
-		this.battlefield.moveUnit(originX, originY, destinyX, destinyY);
+		battlefield.moveUnit(originX, originY, destinyX, destinyY);
 		
 
 		return result;

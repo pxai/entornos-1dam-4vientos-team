@@ -70,7 +70,7 @@ public class Tile {
 	 * @return
 	 */
 	public String show() {
-		if (this.unit == null)
+		if (this.unit == null || !this.unit.imAlive())
 			return "[   ]";
 		else
 			return "["+this.unit.show()+"]";

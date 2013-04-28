@@ -16,10 +16,14 @@ public abstract class Unit {
 	protected int attack;
 	protected int defense;
 	protected int move = 1;
-	protected int range;
+	protected int range = 1;
 	protected int life = 3;
 	protected String unitCode;
 	protected Random random = new Random();
+
+	public static final int INFANTRY = 0;
+	public static final int BOWMEN = 1;
+	public static final int CHIVALRY = 2;
 	
 	public Unit (int armyNumber, String name, int number) {
 		this.armyNumber = armyNumber;
@@ -32,6 +36,29 @@ public abstract class Unit {
 		this.name = name;
 		this.number = number;
 		this.unitCode = unitCode;
+	}
+	
+	/**
+	 * factory method to create units
+	 * @param armyNumber
+	 * @param name
+	 * @param number
+	 * @param unitCode
+	 * @param type
+	 * @return
+	 */
+	public static Unit create (int armyNumber, String name, int number, String unitCode, int type) {
+
+		switch (type) {
+			case INFANTRY : return new Infantry(armyNumber, name, number, unitCode);
+
+			case BOWMEN : return new Bowmen(armyNumber, name, number, unitCode);
+
+			case CHIVALRY : return new Chivalry(armyNumber, name, number, unitCode);
+
+			default:
+						throw new RuntimeException("Unkown army type you madafaka you");
+		}
 	}
 
 	/**
@@ -147,7 +174,8 @@ public abstract class Unit {
 		if (life < 1) { statusResult += "[DEAD] "; }
 		statusResult += name + " no:" + number + ". ";
 		statusResult += "Att: " + attack +" Def:" + defense;
-		statusResult += "Mov: " + move +" Rng:" + range;
+		statusResult += " Mov: " + move +" Rng:" + range;
+		statusResult += " Life: " + life;
 		return statusResult;
 	}
 	
@@ -174,17 +202,13 @@ public abstract class Unit {
 	 * attack
 	 * @return total attack points
 	 */
-	public int attack() {
-		return attack + random.nextInt(3 + life);
-	}
+	public abstract int attack();
 
 	/**
 	 * defend
 	 * @return total defense points
 	 */
-	public int defend() {
-		return attack + random.nextInt(3 + life);
-	}
+	public abstract int defend();
 
 	public int getRange() {
 		return range;
@@ -207,5 +231,6 @@ public abstract class Unit {
 	public void setUnitCode(String unitCode) {
 		this.unitCode = unitCode;
 	}
+
 
 }

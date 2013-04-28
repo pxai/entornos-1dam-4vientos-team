@@ -26,13 +26,13 @@ public class Army extends Vector<Unit>{
 	private void initialize () {
 		// three units of bowmen and infantry
 		for (int i=1;i<4;i++) {
-			this.add(new Bowmen(armyNumber,"Bowmen",i,"B"));
-			this.add(new Infantry(armyNumber,"Infantry",i,"I"));
+			this.add(Unit.create(armyNumber,"Bowmen",i,"B",Unit.BOWMEN));
+			this.add(Unit.create(armyNumber,"Infantry",i,"I", Unit.INFANTRY));
 		}
 		
 		// two units of chivalry
-		this.add(new Chivalry(armyNumber,"Chivalry",1,"C"));
-		this.add(new Chivalry(armyNumber,"Chivalry",2,"C"));
+		this.add(Unit.create(armyNumber,"Chivalry",1,"C", Unit.CHIVALRY));
+		this.add(Unit.create(armyNumber,"Chivalry",2,"C", Unit.CHIVALRY));
 		
 	}
 	
