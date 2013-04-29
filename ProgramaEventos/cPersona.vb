@@ -23,9 +23,11 @@
             ElseIf value < 1000 Then
                 Dim miE As New EventArgs
                 RaiseEvent LimiteSueldo(Me, miE)
-            ElseIf value > 10000 Then
-
-
+            ElseIf value > 5000 Then
+                '
+                Dim miE As New SuperSueldoEventArg(value)
+                miE.Admitirlo = False
+                RaiseEvent SuperSueldo(Me, miE)
             Else
                 _sueldo = value
             End If
@@ -36,8 +38,14 @@
     ''' constructor vacío
     ''' </summary>
     ''' <remarks></remarks>
-    Public Sub cPersona()
+    Public Sub New()
 
     End Sub
+
+    Public Sub New(ByVal nombre As String, ByVal nuevoSueldo As Double)
+        Me.nombre = nombre
+        Me.sueldo = nuevoSueldo
+    End Sub
+
 
 End Class
