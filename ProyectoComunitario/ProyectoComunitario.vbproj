@@ -85,6 +85,12 @@
     <Compile Include="FormPello.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPruebas.Designer.vb">
+      <DependentUpon>FormPruebas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPruebas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
