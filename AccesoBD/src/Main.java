@@ -45,7 +45,7 @@ public class Main {
 	  result = stat.executeUpdate(updateQuery);
 	  // PREPARED STATEMENT
 	  String insertSQL = 
-			"insert into customer (name,address) values (?, ?)";
+			" insert into customer (name,address) values (?, ?)";
 	  PreparedStatement prep = conn.prepareStatement(insertSQL);
 
 	    prep.setString(1, "Eomer");
