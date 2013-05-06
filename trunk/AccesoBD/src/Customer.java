@@ -97,7 +97,7 @@ public class Customer {
 		    
 		    System.out.println("create> " + sql);
 
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			System.err.println("Exception: " +  sql + ". Error: " + e.getMessage());
 		} finally {
 		}
@@ -122,7 +122,7 @@ public class Customer {
 		    statement = connection.createStatement();
 		    result = statement.executeUpdate(sql);
 		    System.out.println(" update> " + sql);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			System.err.println("Exception: " +  sql + ". Error: " + e.getMessage());
 		} finally {
 		}
@@ -146,7 +146,7 @@ public class Customer {
 		    statement = connection.createStatement();
 		    result = statement.executeUpdate(sql);
 		    System.out.println("[DataService] delete> " + sql);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			System.err.println("Exception: " +  sql + ". Error: " + e.getMessage());
 		} finally {
 		}
