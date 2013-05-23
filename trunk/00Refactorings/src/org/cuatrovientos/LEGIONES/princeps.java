@@ -4,7 +4,8 @@
 package org.cuatrovientos.LEGIONES;
 
 /**
- * @author luser
+ * La infantería pesada, segunda línea y cota de malla
+ * @author Caius Contomatus
  *
  */
 public class princeps extends unidaz {

@@ -4,7 +4,8 @@
 package org.cuatrovientos.LEGIONES;
 
 /**
- * @author luser
+ * los velites eran la infantería ligera de la legión
+ * @author Caius Contomatus
  *
  */
 public class velites extends unidaz {

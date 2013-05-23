@@ -6,7 +6,8 @@ package org.cuatrovientos.LEGIONES;
 import java.util.Random;
 
 /**
- * @author luser
+ * Representa una unidad genérica de la legión
+ * @author Caius Contomatus
  *
  */
 public class unidaz {
@@ -16,7 +17,8 @@ public class unidaz {
 	int vida_caballo;
 	
 	public unidaz () {
-		
+		ata = alea.nextInt(6) + 1;
+		def = alea.nextInt(6) + 1;
 	}
 	
 	public unidaz (int at, int df) {
@@ -40,5 +42,13 @@ public class unidaz {
 		int ale = alea.nextInt(6);
 		tot = ale + def;
 		return tot;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "unidaz [ata=" + ata + ", def=" + def + "]";
 	}
 }
