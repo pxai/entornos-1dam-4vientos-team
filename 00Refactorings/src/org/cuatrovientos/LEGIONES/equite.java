@@ -4,7 +4,8 @@
 package org.cuatrovientos.LEGIONES;
 
 /**
- * @author luser
+ * La unidad de caballería, la más prestigiosa
+ * @author Caius Contomatus
  *
  */
 public class equite extends unidaz {
