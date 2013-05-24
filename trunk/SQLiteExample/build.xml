@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!-- ejecutar: ant -->
+<!-- llevará a cabo la acción por defecto. -->
+<project name="ant SQLi" default="ejecutar" basedir=".">
+<property name="dir.src" value="./src"/>
+<property name="dir.lib" value="./lib"/>
+<property name="dir.dist" value="./dist"/>
+<property name="dir.build" value="./bin"/>
+
+<path id="project.classpath">
+	<pathelement location="${dir.src}"/>
+	<pathelement location="${dir.build}"/>
+	<!-- librerías -->
+	<fileset dir="${dir.lib}">
+		<include name="*.jar"/>
+	</fileset>
+</path>
+
+<target name="compilar" description="Compilar todo" depends="preparar">
+<pathconvert targetos="windows" property="windowsPath" refid="project.classpath"/>
+<!-- now echo the path to the console -->
+	<javac destdir="${dir.build}" includeantruntime="false">
+		<src path="${dir.src}"/>
+		<classpath refid="project.classpath"/>
+	</javac>
+</target>
+
+<target name="ejecutar" depends="compilar" description="Ejecutar">
+	<echo message="Ok, compilado, vamos a ejecutar: " />
+	<!-- ejecuta el m?todo main dentro de la clase java -->
+	<java classname="SQLiteExample">
+	<classpath path="${dir.build}"/>
+	<classpath refid="project.classpath"/>
+	</java>
+</target>
+
+	<!-- Genera los directorios de salida: ant preparar -->
+	<target name="preparar" description="Crea los directorios" depends="clean">
+		<mkdir dir="${dir.build}"/>
+		<mkdir dir="${dir.dist}"/>
+	</target>
+
+	<!-- Elimina todo lo creado: ant clean -->
+	<target name="clean" description="Elimina todos los ficheros generados">
+		<delete dir="${dir.build}"/>
+		<delete dir="${dir.dist}"/>
+	</target>
+
+	<!-- Genera un fichero jar, depende de la tarea compile: ant jar -->
+	<target name="jar" depends="compilar" description="Genera un fichero jar en el directorio 'dist'.">
+		<jar jarfile="${dir.dist}/proyecto.jar"  basedir="${dir.build}"  >
+		 	<fileset dir="${dir.build}" />
+    		<fileset dir="." includes="*.db"/>
+    		<!--fileset dir="${dir.lib}" includes="${dir.lib}/*.jar" /-->
+    		<zipfileset includes="**/*.class" src="${dir.lib}/sqlitejdbc-v056-pure.jar"/>
+       		 <manifest>
+			      <attribute name="Main-Class" value="SQLiteExample"/>
+    			</manifest>
+		</jar>
+	</target>
+
+
+	<target name="ejecutarjar" depends="jar" description="Ejecutar">
+		<echo message="Ok, compilado, vamos a ejecutar: " />
+		<!-- ejecuta el mÃ©todo main dentro de la clase java -->
+		<java classname="SQLiteExample">
+			<classpath>
+				<fileset dir="${dir.dist}" includes="*.jar" />
+			</classpath>		
+			</java>
+	</target>
+
+
+ <target name="help"    description="Muestra ayuda">
+ <!-- Otra opción es que muestre las descripciones -->
+  <!--exec executable="ant">
+   <arg value="-p"/>
+  </exec-->
+    <echo>Modos de ejecución:</echo>
+    <echo>1. Compilar y ejecutar: ant </echo>
+    <echo>2. Compilar crear jar: ant jar</echo>
+    <echo>3. Compilar, crear jar y ejecutar: ant ejecutarjar</echo>
+ </target>
+
+
+</project>
