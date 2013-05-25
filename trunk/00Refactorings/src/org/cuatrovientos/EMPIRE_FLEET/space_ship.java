@@ -9,8 +9,14 @@ public class space_ship {
 	int bombs;
 	int type;
 	int speed;
-
 	
+	/**
+	 * constructor
+	 * @param t
+	 */
+	public space_ship (int t)  {
+		type = t;
+	}
 	
 	/**
 	 * only for bomber type (==2)
