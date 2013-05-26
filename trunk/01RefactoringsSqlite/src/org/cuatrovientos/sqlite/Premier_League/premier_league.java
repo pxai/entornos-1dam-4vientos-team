@@ -24,12 +24,15 @@ public class premier_league {
 	public String show_league_table () {
 		String r = "";
 		 try {
+			 	// PART 1 connection
+			 	// First of all we connect to DB
 			    Class.forName("org.sqlite.JDBC");
-			    con =
-			      DriverManager.getConnection("jdbc:sqlite:premierleague.db");
+			    con = DriverManager.getConnection("jdbc:sqlite:premierleague.db");
+			
+			    // PART 2 select data
+			    // We create a new Statement
 			    Statement stat = con.createStatement();
 			
-			    
 			    // Now we select data and we show results in a loop.
 			    ResultSet rs = stat.executeQuery("select * from premiertable;");
 			    while (rs.next()) {
