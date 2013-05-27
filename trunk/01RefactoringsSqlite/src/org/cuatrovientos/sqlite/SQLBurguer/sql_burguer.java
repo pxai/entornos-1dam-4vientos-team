@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 
 /**
- * Manage a burguer, show products, gets order, shows order total,..
+ * Manage a burger, show products, gets order, shows order total,..
  * @author Colonel Sanders
  *
  */
