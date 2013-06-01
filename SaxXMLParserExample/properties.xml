@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PROPERTIES SYSTEM "properties.dtd">
+<PROPERTIES>
+	<PROPERTY NAME="system_version" >1.0.01	</PROPERTY>
+	<PROPERTY NAME="loglevel" >1</PROPERTY>
+	<PROPERTY NAME="logfile" >Data/log/output.log</PROPERTY>
+	<PROPERTY NAME="multiuser_y_n" >y</PROPERTY>
+	<PROPERTY NAME="server_y_n" >y</PROPERTY>
+	<PROPERTY NAME="language" >en</PROPERTY>
+	<PROPERTY NAME="db_type" >sql</PROPERTY>
+	<PROPERTY NAME="jdbc_driver" >sun.jdbc.odbc.JdbcOdbcDriver</PROPERTY>
+	<PROPERTY NAME="jdbc_url" >jdbc:odbc:pruebas</PROPERTY>
+	<PROPERTY NAME="jdbc_user" ></PROPERTY>
+	<PROPERTY NAME="jdbc_password" ></PROPERTY>
+	<PROPERTY NAME="init.d" >Data/etc/init.d</PROPERTY>
+</PROPERTIES>
