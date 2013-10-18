@@ -1,0 +1,78 @@
+A
+B
+C
+D
+
+
+
+
+
+
+
+
+
+
+
+A
+if (cond) {
+ B
+}
+C
+
+
+
+A
+if (cond) {
+ B
+} else {
+ C
+}
+D
+
+
+
+
+A
+switch (cond) {
+ case 1: B
+ case 2: C
+ default: D
+}
+E
+
+
+A
+while (cond) {
+ B
+}
+C
+
+(lo mismo para el for)
+
+
+
+
+
+
+
+
+
+A
+do {
+ B
+} while (cond);
+C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
