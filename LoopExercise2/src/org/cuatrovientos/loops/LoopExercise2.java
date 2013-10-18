@@ -20,7 +20,7 @@ public class LoopExercise2 {
 		Scanner reader = new Scanner(System.in);
 		String line = "";
 		
-		System.out.println("Enter a number:");
+		System.out.println("Enter a number, please:");
 		line = reader.nextLine();
 		number = Integer.parseInt(line);
 		
