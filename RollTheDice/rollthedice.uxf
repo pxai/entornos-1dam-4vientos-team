@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.1">
+  <zoom_level>15</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>75</x>
+      <y>0</y>
+      <w>210</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>Dice
+--
+-sides: int 
+--
++roll() : int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>15</x>
+      <y>195</y>
+      <w>585</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+-strength: int
+-speed: int
+-inteligence: int
+-lifePoints: int
+--
++Player(strength: int, speed: int, inteligence: int, lifePoints: int)
++attack(): int
++defend(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>180</x>
+      <y>60</y>
+      <w>132</w>
+      <h>164</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses</panel_attributes>
+    <additional_attributes>75;45;75;135</additional_attributes>
+  </element>
+</diagram>
