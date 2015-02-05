@@ -4,7 +4,7 @@
 package org.cuatrovientos.parking;
 
 /**
- * Represents a Car
+ * Represents a Car, hello
  * @author Pello Altadill
  *
  */
